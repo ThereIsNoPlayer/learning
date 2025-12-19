@@ -1,4 +1,4 @@
-#include<stdio.h>//2513041719赵天珺
+#include<stdio.h>
 struct days {
     int year;
     int month;
