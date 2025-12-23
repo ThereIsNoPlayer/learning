@@ -1,15 +1,15 @@
-#include <stdio.h>
-int main( ) {
+#include<stdio.h>
+int main(){
     FILE *fp;
-    int i,a[4]= {1,2,3,4},b;
-    fp=fopen("data.dat","wb");
-    for(i=0; i<4; i++)
-        fwrite(&a[i],sizeof(int),1,fp);
+    fp=fopen("test.txt","w");
+    char str[100];
+    scanf("%[^\n]",str);
+    fputs(str,fp);
     fclose(fp);
-    fp=fopen("data.dat","rb");
-    fseek(fp,-2*sizeof(int),SEEK_END);
-    fread(&b,sizeof(int),1,fp);
+
+    fopen("test.txt","r");
+    fgets(str,100,fp);
+    printf("Read from file: %s\n",str);
     fclose(fp);
-    printf("%d\n",b) ;
     return 0;
 }
